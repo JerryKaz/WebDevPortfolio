@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form | BITM203 Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-laptop-code"></i> WebDev<span>Portfolio</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="school.html"><i class="fas fa-graduation-cap"></i> My School</a></li>
+                    <li><a href="timetable.html"><i class="fas fa-calendar"></i> Timetable</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Header -->
+    <section class="page-header contact-header">
+        <div class="container">
+            <h1>Contact & Registration</h1>
+            <p>Get in touch or register for web development updates</p>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="info-card">
+                <h2 class="section-title">Get In Touch</h2>
+                <p>This page demonstrates form handling and validation as learned in Week 6. Fill out the form below to send a message or register for updates about web development projects.</p>
+                
+                <div class="contact-methods">
+                    <div class="method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>alex.j@student.tech.edu</p>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Tech University, New York</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="registration-form">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="section-title">Registration Form</h2>
+                <p class="form-intro">Please fill out all required fields (*). All data is validated using JavaScript.</p>
+                
+                <form id="contactForm" novalidate>
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                            <div class="error-message" id="nameError"></div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="password">Password *</label>
+                                <input type="password" id="password" name="password" placeholder="Create a password">
+                                <div class="error-message" id="passwordError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password *</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+                                <div class="error-message" id="confirmPasswordError"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Demographic Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Demographic Information</h3>
+                        
+                        <div class="form-group">
+                            <label>Gender *</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male">
+                                    <span class="radio-custom"></span>
+                                    Male
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="radio-custom"></span>
+                                    Female
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other">
+                                    <span class="radio-custom"></span>
+                                    Other
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="prefer-not-to-say">
+                                    <span class="radio-custom"></span>
+                                    Prefer not to say
+                                </label>
+                            </div>
+                            <div class="error-message" id="genderError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Interests (Select all that apply)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="web-design">
+                                    <span class="checkbox-custom"></span>
+                                    Web Design
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="frontend">
+                                    <span class="checkbox-custom"></span>
+                                    Frontend Development
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="backend">
+                                    <span class="checkbox-custom"></span>
+                                    Backend Development
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="responsive">
+                                    <span class="checkbox-custom"></span>
+                                    Responsive Design
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="javascript">
+                                    <span class="checkbox-custom"></span>
+                                    JavaScript
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country">
+                                <option value="">Select your country</option>
+                                <option value="us">United States</option>
+                                <option value="ca">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="au">Australia</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Message Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-comment"></i> Your Message</h3>
+                        
+                        <div class="form-group">
+                            <label for="messageType">Message Type</label>
+                            <select id="messageType" name="messageType">
+                                <option value="general">General Inquiry</option>
+                                <option value="project">Project Collaboration</option>
+                                <option value="feedback">Website Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Enter your message here..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms and Submission -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                <span class="checkbox-custom"></span>
+                                Subscribe to newsletter for web development tips
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms">
+                                <span class="checkbox-custom"></span>
+                                I agree to the <a href="#" class="terms-link">Terms and Conditions</a> *
+                            </label>
+                            <div class="error-message" id="termsError"></div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="fas fa-paper-plane"></i> Submit Form
+                            </button>
+                            <button type="reset" class="btn btn-secondary btn-reset">
+                                <i class="fas fa-redo"></i> Reset Form
+                            </button>
+                        </div>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Features -->
+    <section class="form-features">
+        <div class="container">
+            <h2 class="section-title">Form Features Demonstrated</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Real-time Validation</h3>
+                    <p>Instant feedback for required fields, email format, and password strength</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Form adapts perfectly to mobile, tablet, and desktop screens</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>Input Types</h3>
+                    <p>Text, email, password, radio, checkbox, select, and textarea inputs</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h3>JavaScript</h3>
+                    <p>Form validation and interactivity using external JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="school.html">My School</a></li>
+                        <li><a href="timetable.html">Timetable</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> alex.j@student.tech.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tech University, NY</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Course Details</h4>
+                    <p>BITM203 - Web Design & Development</p>
+                    <p>Final Project: Weeks 3-11</p>
+                    <p>Spring Semester 2024</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alex Johnson. All rights reserved. This website is created for BITM203 Final Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* Responsive CSS for BITM203 Final Project */
+
+/* Tablet Styles (768px - 1024px) */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        order: 1;
+    }
+    
+    .hero-image {
+        order: 0;
+        margin-bottom: 30px;
+    }
+    
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .overview-content {
+        flex-direction: column;
+    }
+    
+    .profile-container {
+        flex-direction: column;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-row .form-group {
+        min-width: 100%;
+    }
+}
+
+/* Mobile Styles (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    .nav-list {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        transition: var(--transition);
+        z-index: 999;
+        align-items: center;
+    }
+    
+    .nav-list.active {
+        left: 0;
+    }
+    
+    .nav-list li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-list a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid var(--gray-medium);
+        justify-content: center;
+    }
+    
+    .nav-list a.active::after {
+        display: none;
+    }
+    
+    .nav-list a.active {
+        background-color: var(--gray-light);
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-text .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    /* Page Headers */
+    .page-header {
+        padding: 80px 0 40px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
+    }
+    
+    /* Tables */
+    .table-wrapper {
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        padding: 10px 8px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Forms */
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-submit, .btn-reset {
+        width: 100%;
+    }
+    
+    .radio-group, .checkbox-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Gallery & Grids */
+    .gallery-grid,
+    .tips-grid,
+    .features-grid,
+    .subjects-list,
+    .memories-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    /* General */
+    .container {
+        width: 95%;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    audio, video {
+        width: 100%;
+    }
+}
+
+/* Small Mobile Styles (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-image {
+        flex: 0 0 250px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .profile-card, .about-me, .overview-card, .info-card {
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 20px;
+    }
+    
+    .method {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .memory-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .timetable {
+        font-size: 0.8rem;
+    }
+    
+    th, td {
+        padding: 8px 5px;
+    }
+}

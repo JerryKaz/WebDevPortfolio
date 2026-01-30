@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | BITM203 Final Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-laptop-code"></i> WebDev<span>Portfolio</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="school.html"><i class="fas fa-graduation-cap"></i> My School</a></li>
+                    <li><a href="timetable.html"><i class="fas fa-calendar"></i> Timetable</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Alex Johnson</h2>
+                    <p class="subtitle">Web Development Student</p>
+                    <p class="description">BITM203 Final Project - A complete website demonstrating web design skills learned from Week 3 to Week 11</p>
+                    <div class="hero-buttons">
+                        <a href="#profile" class="btn btn-primary">View Profile</a>
+                        <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Alex Johnson - Web Developer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Section -->
+    <section class="media-section audio-section">
+        <div class="container">
+            <h3><i class="fas fa-music"></i> Background Music</h3>
+            <div class="audio-player">
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p class="audio-note">Enjoy some relaxing music while browsing the site</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile-section">
+        <div class="container">
+            <h2 class="section-title">Personal Profile</h2>
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Profile Picture">
+                    </div>
+                    <div class="profile-info">
+                        <h3>Alex Johnson</h3>
+                        <p class="title">BITM203 Student</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-university"></i>
+                                <div>
+                                    <strong>University:</strong>
+                                    <p>Tech University</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-book"></i>
+                                <div>
+                                    <strong>Course:</strong>
+                                    <p>BITM203 - Web Design</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <p>New York, NY</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <p>alex.j@student.tech.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-me">
+                    <h3>About Me</h3>
+                    <p>I'm a passionate web development student currently enrolled in BITM203. This website is my final project, showcasing all the HTML, CSS, and JavaScript skills I've learned throughout the semester.</p>
+                    
+                    <div class="skills-section">
+                        <h4><i class="fas fa-code"></i> Technical Skills</h4>
+                        <ul class="skills-list">
+                            <li>HTML5 & Semantic Markup</li>
+                            <li>CSS3 & Responsive Design</li>
+                            <li>JavaScript Fundamentals</li>
+                            <li>Form Validation</li>
+                            <li>Media Integration</li>
+                            <li>CSS Grid & Flexbox</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="hobbies-section">
+                        <h4><i class="fas fa-heart"></i> Hobbies & Interests</h4>
+                        <ol class="hobbies-list">
+                            <li>Web Development & Coding</li>
+                            <li>UI/UX Design</li>
+                            <li>Photography</li>
+                            <li>Playing Guitar</li>
+                            <li>Hiking & Outdoor Activities</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="media-section video-section">
+        <div class="container">
+            <h3><i class="fas fa-video"></i> Introduction Video</h3>
+            <div class="video-container">
+                <video controls poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="video-note">Watch this short introduction to web development concepts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="school.html">My School</a></li>
+                        <li><a href="timetable.html">Timetable</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> alex.j@student.tech.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tech University, NY</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Course Details</h4>
+                    <p>BITM203 - Web Design & Development</p>
+                    <p>Final Project: Weeks 3-11</p>
+                    <p>Spring Semester 2024</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mensah Augustus. All rights reserved. This website is created for BITM203 Final Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

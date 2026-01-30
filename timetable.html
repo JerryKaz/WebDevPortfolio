@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weekly Timetable | BITM203 Final Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional timetable-specific styles */
+        .timetable-container {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 0;
+        }
+        
+        .current-day-highlight {
+            background-color: #fff3cd !important;
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        .course-bitm203 {
+            background-color: #d1ecf1 !important;
+            color: #0c5460;
+            font-weight: 600;
+        }
+        
+        .course-lab {
+            background-color: #d4edda !important;
+            color: #155724;
+            font-weight: 600;
+        }
+        
+        .break-time {
+            background-color: #f8f9fa !important;
+            font-style: italic;
+            color: #6c757d;
+        }
+        
+        .study-time {
+            background-color: #e2f0d9 !important;
+        }
+        
+        .free-time {
+            background-color: #f5f5f5 !important;
+        }
+        
+        .time-note {
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-laptop-code"></i> WebDev<span>Portfolio</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="school.html"><i class="fas fa-graduation-cap"></i> My School</a></li>
+                    <li><a href="timetable.html" class="active"><i class="fas fa-calendar"></i> Timetable</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Timetable Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-calendar-alt"></i> Weekly Timetable</h1>
+            <p>BITM203 - Web Design & Development Schedule</p>
+            <div class="current-week">
+                <p><i class="fas fa-clock"></i> Current Week: Week 11 (Final Project Week)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timetable Overview -->
+    <section class="timetable-overview">
+        <div class="container">
+            <div class="overview-card">
+                <h2 class="section-title">Weekly Schedule Overview</h2>
+                <p>This timetable represents my typical week as a web development student. It includes all academic activities, study sessions, project work, and personal time management.</p>
+                
+                <div class="legend">
+                    <h3><i class="fas fa-key"></i> Color Legend:</h3>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <span class="color-box bitm203-color"></span>
+                            <span>BITM203 Classes/Labs</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-box study-color"></span>
+                            <span>Study/Revision Time</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-box project-color"></span>
+                            <span>Project Work</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="color-box break-color"></span>
+                            <span>Break/Free Time</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="key-dates">
+                    <h3><i class="fas fa-calendar-check"></i> Important This Week:</h3>
+                    <ul>
+                        <li><strong>BITM203 Final Project:</strong> Due at end of Week 11</li>
+                        <li><strong>Web Development Lab:</strong> Friday 2-4 PM</li>
+                        <li><strong>Study Group Meeting:</strong> Tuesday & Thursday 3-5 PM</li>
+                        <li><strong>Library Research:</strong> Tuesday & Thursday 9-10 AM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Timetable -->
+    <section class="timetable-container">
+        <div class="container">
+            <h2 class="section-title">Detailed Weekly Schedule</h2>
+            <p class="table-description">Hover over any cell for details. Click to mark as completed.</p>
+            
+            <div class="table-responsive">
+                <table class="timetable-table">
+                    <thead>
+                        <tr>
+                            <th class="time-header">Time Slot</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Morning Sessions -->
+                        <tr>
+                            <td class="time-slot">7:00 - 8:00 AM</td>
+                            <td class="free-time" data-description="Morning exercise and meditation">Morning Exercise</td>
+                            <td class="free-time" data-description="Morning exercise and meditation">Morning Exercise</td>
+                            <td class="free-time" data-description="Morning exercise and meditation">Morning Exercise</td>
+                            <td class="free-time" data-description="Morning exercise and meditation">Morning Exercise</td>
+                            <td class="free-time" data-description="Morning exercise and meditation">Morning Exercise</td>
+                            <td class="free-time" data-description="Extra sleep and relaxation">Sleep In</td>
+                            <td class="free-time" data-description="Extra sleep and relaxation">Sleep In</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="time-slot">8:00 - 9:00 AM</td>
+                            <td data-description="Breakfast and preparation for the day">Breakfast & Prep</td>
+                            <td data-description="Breakfast and preparation for the day">Breakfast & Prep</td>
+                            <td data-description="Breakfast and preparation for the day">Breakfast & Prep</td>
+                            <td data-description="Breakfast and preparation for the day">Breakfast & Prep</td>
+                            <td data-description="Breakfast and preparation for the day">Breakfast & Prep</td>
+                            <td data-description="Leisurely breakfast">Breakfast</td>
+                            <td data-description="Leisurely breakfast">Breakfast</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="time-slot">9:00 - 10:00 AM</td>
+                            <td class="study-time" data-description="Review previous day's notes">Study Session</td>
+                            <td class="study-time" data-description="Library research for assignments">Library Research</td>
+                            <td class="study-time" data-description="Review previous day's notes">Study Session</td>
+                            <td class="study-time" data-description="Library research for assignments">Library Research</td>
+                            <td class="study-time" data-description="Prepare for lab session">Study Session</td>
+                            <td class="project-color" data-description="Work on final project">Project Work</td>
+                            <td class="free-time" data-description="Personal time">Free Time</td>
+                        </tr>
+                        
+                        <!-- Core Classes -->
+                        <tr>
+                            <td class="time-slot">10:00 AM - 12:00 PM</td>
+                            <td class="course-bitm203" data-description="BITM203 Web Design lecture">
+                                <strong>BITM203 Class</strong><br>
+                                <span class="time-note">Lecture Hall A</span>
+                            </td>
+                            <td data-description="Database Systems course">
+                                Database Systems<br>
+                                <span class="time-note">Room 302</span>
+                            </td>
+                            <td class="course-bitm203" data-description="BITM203 Web Design lecture">
+                                <strong>BITM203 Class</strong><br>
+                                <span class="time-note">Lecture Hall A</span>
+                            </td>
+                            <td data-description="Database Systems course">
+                                Database Systems<br>
+                                <span class="time-note">Room 302</span>
+                            </td>
+                            <td data-description="Computer Networking course">
+                                Networking<br>
+                                <span class="time-note">Room 305</span>
+                            </td>
+                            <td class="project-color" data-description="Work on final project">Project Work</td>
+                            <td class="free-time" data-description="Personal time">Free Time</td>
+                        </tr>
+                        
+                        <!-- Lunch Break -->
+                        <tr>
+                            <td class="time-slot">12:00 - 1:00 PM</td>
+                            <td class="break-time" colspan="7" data-description="Lunch break and relaxation">
+                                <center><strong>LUNCH BREAK</strong></center>
+                            </td>
+                        </tr>
+                        
+                        <!-- Afternoon Sessions -->
+                        <tr>
+                            <td class="time-slot">1:00 - 3:00 PM</td>
+                            <td class="study-time" data-description="HTML/CSS coding practice">Programming Practice</td>
+                            <td class="study-time" data-description="Work on database assignment">Assignment Work</td>
+                            <td class="study-time" data-description="JavaScript exercises">Programming Practice</td>
+                            <td class="study-time" data-description="Work on networking assignment">Assignment Work</td>
+                            <td class="course-lab" data-description="BITM203 Web Development lab">
+                                <strong>BITM203 Lab</strong><br>
+                                <span class="time-note">Computer Lab 4</span>
+                            </td>
+                            <td class="project-color" data-description="Work on final project">Project Work</td>
+                            <td class="free-time" data-description="Family time and relaxation">Family Time</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="time-slot">3:00 - 5:00 PM</td>
+                            <td class="project-color" data-description="Work on BITM203 final project">Web Dev Project</td>
+                            <td class="study-time" data-description="Study group meeting">Study Group</td>
+                            <td class="project-color" data-description="Work on BITM203 final project">Web Dev Project</td>
+                            <td class="study-time" data-description="Study group meeting">Study Group</td>
+                            <td class="project-color" data-description="Work on BITM203 final project">Web Dev Project</td>
+                            <td data-description="Outdoor activities and sports">Outdoor Activity</td>
+                            <td data-description="Plan next week's schedule">Planning Week</td>
+                        </tr>
+                        
+                        <!-- Evening Sessions -->
+                        <tr>
+                            <td class="time-slot">5:00 - 7:00 PM</td>
+                            <td class="free-time" data-description="Dinner and relaxation">Dinner & Free Time</td>
+                            <td class="free-time" data-description="Dinner and relaxation">Dinner & Free Time</td>
+                            <td class="free-time" data-description="Dinner and relaxation">Dinner & Free Time</td>
+                            <td class="free-time" data-description="Dinner and relaxation">Dinner & Free Time</td>
+                            <td class="free-time" data-description="Dinner and relaxation">Dinner & Free Time</td>
+                            <td class="free-time" data-description="Social activities">Social Time</td>
+                            <td class="free-time" data-description="Personal hobbies">Hobbies</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="time-slot">7:00 - 9:00 PM</td>
+                            <td class="study-time" data-description="Review day's learning">Revision</td>
+                            <td class="study-time" data-description="Review day's learning">Revision</td>
+                            <td class="study-time" data-description="Review day's learning">Revision</td>
+                            <td class="study-time" data-description="Review day's learning">Revision</td>
+                            <td class="study-time" data-description="Review day's learning">Revision</td>
+                            <td class="free-time" data-description="Entertainment and movies">Entertainment</td>
+                            <td class="study-time" data-description="Reading technical books">Reading</td>
+                        </tr>
+                        
+                        <!-- Night -->
+                        <tr>
+                            <td class="time-slot">9:00 - 10:00 PM</td>
+                            <td class="free-time" data-description="Wind down and prepare for bed">Relaxation</td>
+                            <td class="free-time" data-description="Wind down and prepare for bed">Relaxation</td>
+                            <td class="free-time" data-description="Wind down and prepare for bed">Relaxation</td>
+                            <td class="free-time" data-description="Wind down and prepare for bed">Relaxation</td>
+                            <td class="free-time" data-description="Wind down and prepare for bed">Relaxation</td>
+                            <td class="free-time" data-description="Wind down and prepare for bed">Relaxation</td>
+                            <td class="free-time" data-description="Wind down and prepare for bed">Relaxation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="timetable-notes">
+                <h3><i class="fas fa-sticky-note"></i> Important Notes:</h3>
+                <ul>
+                    <li><strong>BITM203 Final Project</strong> is the priority this week - allocate extra time as needed</li>
+                    <li><strong>Study groups</strong> are essential for collaborative learning and problem-solving</li>
+                    <li><strong>Regular breaks</strong> are important for maintaining productivity and focus</li>
+                    <li><strong>Weekend project work</strong> is flexible but recommended for staying on track</li>
+                    <li>All times are in 24-hour format and may adjust based on assignment deadlines</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Goals -->
+    <section class="weekly-goals">
+        <div class="container">
+            <h2 class="section-title">Weekly Learning Goals</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>HTML/CSS Mastery</h3>
+                    <p>Complete all semantic HTML5 elements and responsive CSS layouts</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+                <div class="goal-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>JavaScript Skills</h3>
+                    <p>Implement form validation and interactive features</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%;">85%</div>
+                    </div>
+                </div>
+                <div class="goal-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Final Project</h3>
+                    <p>Complete and test all required features</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 75%;">75%</div>
+                    </div>
+                </div>
+                <div class="goal-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Time Management</h3>
+                    <p>Stick to schedule and meet all deadlines</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 95%;">95%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Tips -->
+    <section class="study-tips">
+        <div class="container">
+            <h2 class="section-title">Effective Study Strategies</h2>
+            <div class="tips-container">
+                <div class="tip">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Pomodoro Technique</h3>
+                        <p>Study for 25 minutes, then take a 5-minute break. Repeat 4 times, then take a longer break.</p>
+                    </div>
+                </div>
+                <div class="tip">
+                    <i class="fas fa-code"></i>
+                    <div>
+                        <h3>Active Coding</h3>
+                        <p>Don't just read code - type it out and experiment with modifications to understand it better.</p>
+                    </div>
+                </div>
+                <div class="tip">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h3>Peer Teaching</h3>
+                        <p>Explain concepts to classmates. Teaching reinforces your own understanding.</p>
+                    </div>
+                </div>
+                <div class="tip">
+                    <i class="fas fa-project-diagram"></i>
+                    <div>
+                        <h3>Project-Based Learning</h3>
+                        <p>Apply concepts immediately to real projects to solidify understanding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="school.html">My School</a></li>
+                        <li><a href="timetable.html">Timetable</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> alex.j@student.tech.edu</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tech University, NY</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Course Details</h4>
+                    <p>BITM203 - Web Design & Development</p>
+                    <p>Final Project: Weeks 3-11</p>
+                    <p>Spring Semester 2024</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alex Johnson. All rights reserved. This website is created for BITM203 Final Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Timetable JavaScript -->
+    <script>
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight current day in timetable
+            highlightCurrentDay();
+            
+            // Add click functionality to timetable cells
+            makeTimetableInteractive();
+            
+            // Add hover tooltips
+            addTableTooltips();
+            
+            // Initialize mobile menu
+            initMobileMenu();
+        });
+        
+        function initMobileMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (menuToggle && navList) {
+                menuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                    menuToggle.innerHTML = navList.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
+        }
+        
+        function highlightCurrentDay() {
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const today = new Date().getDay();
+            const currentDay = days[today];
+            
+            // Highlight the column for today
+            const tableHeaders = document.querySelectorAll('.timetable-table th');
+            const tableCells = document.querySelectorAll('.timetable-table td');
+            
+            tableHeaders.forEach((header, index) => {
+                if (header.textContent.includes(currentDay)) {
+                    header.classList.add('current-day-highlight');
+                    
+                    // Also highlight all cells in this column
+                    const columnIndex = index;
+                    tableCells.forEach((cell, cellIndex) => {
+                        // Calculate which column this cell is in
+                        const row = Math.floor(cellIndex / 7); // 7 days per row
+                        const cellColumn = cellIndex % 7;
+                        
+                        if (cellColumn === columnIndex - 1) { // -1 because first column is time
+                            cell.classList.add('current-day-highlight');
+                        }
+                    });
+                }
+            });
+            
+            // Update the current week display
+            const currentWeekElement = document.querySelector('.current-week p');
+            if (currentWeekElement) {
+                currentWeekElement.innerHTML = `<i class="fas fa-clock"></i> Today is ${currentDay} - Week 11 (Final Project Week)`;
+            }
+        }
+        
+        function makeTimetableInteractive() {
+            const tableCells = document.querySelectorAll('.timetable-table td');
+            
+            tableCells.forEach(cell => {
+                // Add click event to mark as completed
+                cell.addEventListener('click', function() {
+                    if (this.classList.contains('completed')) {
+                        this.classList.remove('completed');
+                        this.style.textDecoration = 'none';
+                        this.style.opacity = '1';
+                    } else {
+                        this.classList.add('completed');
+                        this.style.textDecoration = 'line-through';
+                        this.style.opacity = '0.7';
+                    }
+                });
+                
+                // Add double-click to add note
+                cell.addEventListener('dblclick', function() {
+                    const currentText = this.textContent;
+                    const note = prompt('Add a note for this time slot:', currentText);
+                    if (note && note.trim() !== '') {
+                        const originalText = this.querySelector('.original-text') || 
+                                           document.createElement('span');
+                        originalText.className = 'original-text';
+                        originalText.textContent = currentText;
+                        
+                        const noteSpan = document.createElement('span');
+                        noteSpan.className = 'user-note';
+                        noteSpan.textContent = ' - ' + note;
+                        noteSpan.style.color = '#e74c3c';
+                        noteSpan.style.fontStyle = 'italic';
+                        
+                        this.innerHTML = '';
+                        this.appendChild(originalText);
+                        this.appendChild(noteSpan);
+                    }
+                });
+            });
+        }
+        
+        function addTableTooltips() {
+            const tableCells = document.querySelectorAll('.timetable-table td[data-description]');
+            
+            tableCells.forEach(cell => {
+                cell.addEventListener('mouseenter', function(e) {
+                    const description = this.getAttribute('data-description');
+                    
+                    // Create tooltip
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'table-tooltip';
+                    tooltip.textContent = description;
+                    tooltip.style.position = 'absolute';
+                    tooltip.style.background = '#333';
+                    tooltip.style.color = 'white';
+                    tooltip.style.padding = '8px 12px';
+                    tooltip.style.borderRadius = '4px';
+                    tooltip.style.fontSize = '0.9rem';
+                    tooltip.style.zIndex = '1000';
+                    tooltip.style.maxWidth = '200px';
+                    tooltip.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+                    
+                    // Position tooltip
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style.left = (rect.left + window.scrollX + rect.width/2) + 'px';
+                    tooltip.style.top = (rect.top + window.scrollY - 40) + 'px';
+                    
+                    document.body.appendChild(tooltip);
+                    
+                    // Store reference to remove later
+                    this.tooltip = tooltip;
+                });
+                
+                cell.addEventListener('mouseleave', function() {
+                    if (this.tooltip) {
+                        this.tooltip.remove();
+                        this.tooltip = null;
+                    }
+                });
+            });
+        }
+        
+        // Add some CSS for the interactive features
+        const style = document.createElement('style');
+        style.textContent = `
+            .table-tooltip::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #333 transparent transparent transparent;
+            }
+            
+            .completed {
+                position: relative;
+            }
+            
+            .completed::before {
+                content: '✓';
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                color: #27ae60;
+                font-weight: bold;
+            }
+            
+            .progress {
+                height: 20px;
+                background-color: #e9ecef;
+                border-radius: 10px;
+                margin-top: 10px;
+                overflow: hidden;
+            }
+            
+            .progress-bar {
+                height: 100%;
+                background-color: #3498db;
+                border-radius: 10px;
+                text-align: center;
+                color: white;
+                font-size: 0.8rem;
+                line-height: 20px;
+                transition: width 0.3s ease;
+            }
+            
+            .goals-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .goal-card {
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+            
+            .goal-card i {
+                font-size: 2.5rem;
+                color: #3498db;
+                margin-bottom: 15px;
+            }
+            
+            .tips-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
+                margin-top: 40px;
+            }
+            
+            .tip {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .tip i {
+                font-size: 2rem;
+                color: #e74c3c;
+                margin-top: 5px;
+            }
+            
+            .timetable-notes {
+                background: #f8f9fa;
+                padding: 25px;
+                border-radius: 10px;
+                margin-top: 40px;
+            }
+            
+            .timetable-notes ul {
+                list-style: none;
+                padding-left: 0;
+            }
+            
+            .timetable-notes li {
+                padding: 8px 0;
+                border-bottom: 1px solid #dee2e6;
+            }
+            
+            .timetable-notes li:last-child {
+                border-bottom: none;
+            }
+            
+            @media (max-width: 768px) {
+                .goals-grid, .tips-container {
+                    grid-template-columns: 1fr;
+                }
+                
+                .tip {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
